@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduPress - Course Detail</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional Styles for Course Detail Page */
+    /* Container Utility */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Course Banner */
+    .course-banner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
+    }
+    .course-banner .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      color: #fff;
+    }
+    .course-banner .overlay h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: var(--primary-color, #FFA500);
+    }
+    .course-banner .overlay p {
+      font-size: 1rem;
+    }
+    
+    /* Course Overview Section */
+    .course-overview {
+      text-align: center;
+      padding: 10px 0 30px;
+    }
+    .course-overview h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary-color, #FFA500);
+    }
+    .course-overview p {
+      font-size: 1rem;
+      color: #666;
+    }
+    
+    /* Main Course Content */
+    .course-single-content {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .main-content {
+      flex: 3;
+    }
+    .main-content h2 {
+      font-size: 1.8rem;
+      margin: 20px 0 10px;
+      color: var(--primary-color, #FFA500);
+    }
+    .main-content p, 
+    .main-content ul {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .main-content ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    
+    /* Sidebar for Enrollment Info */
+    .sidebar {
+      flex: 1;
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 5px;
+      height: fit-content;
+    }
+    .course-price-card {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .course-price-card .price {
+      font-size: 2rem;
+      color: green;
+      margin-bottom: 20px;
+    }
+    .btn.enroll-btn {
+      background: var(--primary-color, #FFA500);
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn.enroll-btn:hover {
+      background: darkorange;
+    }
+    .course-details {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 15px;
+    }
+    .course-details li {
+      margin-bottom: 8px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .course-single-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">EduPress</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="CourseListing.html">Courses</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+        <li><a href="Login.html">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+      <!-- Course Banner -->
+      <section class="course-banner" style="background-image: url('img/course-detail-banner.jpg');">
+        <div class="overlay">
+          <div>
+            <h1>Create An LMS Website With LearnPress</h1>
+            <p>By John Doe | 1200 Students Enrolled | 12 Lessons</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Course Overview -->
+      <section class="course-overview">
+        <h1>Create An LMS Website With LearnPress</h1>
+        <p>Master the skills to build a complete Learning Management System using LearnPress. Perfect for beginners and professionals alike.</p>
+      </section>
+      
+      <!-- Course Single Content -->
+      <section class="course-single-content">
+        <!-- Main Content -->
+        <div class="main-content">
+          <h2>Course Description</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lacus vitae urna mollis rhoncus. Nulla facilisi. Praesent sit amet libero a leo consequat fermentum. Morbi nec metus eu ligula posuere tempor a eu eros. Sed aliquet, sapien ut consequat elementum, ipsum urna hendrerit nibh, at cursus dolor risus id libero. Curabitur sit amet libero nec nisi pulvinar sodales.</p>
+          
+          <h2>Curriculum</h2>
+          <ul>
+            <li>Introduction and Setup</li>
+            <li>Installing and Configuring LearnPress</li>
+            <li>Creating Courses and Lessons</li>
+            <li>Managing Enrollments and Payments</li>
+            <li>Advanced Customizations</li>
+          </ul>
+          
+          <h2>What You'll Learn</h2>
+          <ul>
+            <li>Building a robust LMS website</li>
+            <li>Implementing effective course delivery</li>
+            <li>User management and engagement strategies</li>
+          </ul>
+          
+          <h2>Instructor Bio</h2>
+          <p>John Doe is an experienced developer and educator with over 10 years of experience building online platforms. He has helped thousands of students master the fundamentals of Learning Management Systems and succeed in their professional endeavors.</p>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="course-price-card">
+            <p class="price">$49.99</p>
+            <button class="btn enroll-btn">Enroll Now</button>
+            <p>Unlimited Access</p>
+            <ul class="course-details">
+              <li>Duration: 12 Lessons</li>
+              <li>Language: English</li>
+              <li>Certificate: Yes</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>EduPress</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="footer-box">
+        <h3>GET HELP</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Latest Articles</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>PROGRAMS</h3>
+        <ul>
+          <li><a href="#">Art & Design</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">IT & Software</a></li>
+          <li><a href="#">Languages</a></li>
+          <li><a href="#">Programming</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>CONTACT US</h3>
+        <address>
+          Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA<br>
+          Tel: +1 (123) 2500-567-8988<br>
+          Email: support@gmail.com
+        </address>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Pinterest</a>
+          <a href="#">X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

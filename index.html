@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduPress - Home</title>
+  
+  <!-- Flickity CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* -----------------------------
+       Base & Utility Styles
+    -------------------------------*/
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background: #f9f9f9; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { font-weight: 600; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    .course-card img {
+    width: 100%; /* Ensures the image fits the card's width */
+    height: 150px; /* Maintains the aspect ratio */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    object-fit: cover; /* Ensures the image covers the container */
+  }
+    
+    /* -----------------------------
+       Header Styles
+    -------------------------------*/
+/* -----------------------------
+     Header Styles
+  -------------------------------*/
+  header {
+    background: #333; /* Black background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff; /* White text */
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  .nav-links li {
+    margin-left: 20px;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+    color: #fff; /* White text */
+    transition: color 0.3s ease;
+  }
+  .nav-links li a:hover {
+    color: var(--primary-color, #FFA500); /* Accent color on hover */
+  }
+    
+    /* -----------------------------
+       Flickity Carousel Styles
+    -------------------------------*/
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .hero-carousel__cell {
+      width: 100%;
+      height: 400px; /* Fixed height for uniformity */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .hero-carousel__cell__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      padding: 0 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    .hero-carousel__cell__content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .hero-carousel__cell__content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-carousel__cell__content .btn {
+      background: var(--primary-color, #FFA500);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .hero-carousel__cell__content .btn:hover {
+      background: darkorange;
+    }
+    
+    /* Optional: Hide Flickity page dots if you prefer a minimalist look */
+    .flickity-page-dots {
+      bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">EduPress</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="FAQs.html">FAQs</a></li>
+      <li><a href="Login.html">Login/Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- HERO SECTION AS FLICKITY SLIDESHOW -->
+  <div class="hero-carousel js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": 3000, "pageDots": true }'>
+    <div class="hero-carousel__cell" style="background-image: url('img/hero1.jpg');">
+      <div class="hero-carousel__cell__content">
+        <h1>Build Skills With Online Courses</h1>
+        <p>Discover a world of learning and unlock your potential.</p>
+        <a href="courses.html" class="btn">Start Learning Now</a>
+      </div>
+    </div>
+    <div class="hero-carousel__cell" style="background-image: url('img/hero2.jpg');">
+      <div class="hero-carousel__cell__content">
+        <h1>Advance Your Career</h1>
+        <p>Choose from hundreds of courses and reach your goals.</p>
+        <a href="courses.html" class="btn">Start Learning Now</a>
+      </div>
+    </div>
+    <div class="hero-carousel__cell" style="background-image: url('img/hero3.jpg');">
+      <div class="hero-carousel__cell__content">
+        <h1>Empower Yourself</h1>
+        <p>Learn new skills, improve your expertise, and succeed.</p>
+        <a href="courses.html" class="btn">Start Learning Now</a>
+      </div>
+    </div>
+    <div class="hero-carousel__cell" style="background-image: url('img/hero4.jpg');">
+      <div class="hero-carousel__cell__content">
+        <h1>Join Our Community</h1>
+        <p>Connect with learners and experts around the world.</p>
+        <a href="courses.html" class="btn">Start Learning Now</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- TOP CATEGORIES -->
+    <section class="categories">
+      <div class="container">
+        <h2>Top Categories</h2>
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="icon">🎨</div>
+            <h3 class="category-name">Art & Design</h3>
+            <p class="course-count">12 Courses</p>
+          </div>
+          <div class="category-card">
+            <div class="icon">💻</div>
+            <h3 class="category-name">Development</h3>
+            <p class="course-count">19 Courses</p>
+          </div>
+          <div class="category-card">
+            <div class="icon">💬</div>
+            <h3 class="category-name">Communication</h3>
+            <p class="course-count">8 Courses</p>
+          </div>
+          <div class="category-card">
+            <div class="icon">🎥</div>
+            <h3 class="category-name">Videography</h3>
+            <p class="course-count">14 Courses</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- FEATURED COURSES -->
+    <section class="featured-courses">
+      <div class="container">
+        <h2>Featured Courses</h2>
+        <div class="course-grid">
+          <div class="course-card">
+            <img src="img/course1.jpg" alt="Course Image">
+            <h3>Web Development Masterclass</h3>
+            <p>Instructor: John Doe</p>
+            <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+            <br>
+            <a href="#" class="btn">Explore Course</a>
+          </div>
+          <div class="course-card">
+            <img src="img/course2.jpg" alt="Course Image">
+            <h3>Photography Essentials</h3>
+            <p>Instructor: Jane Smith</p>
+            <p>⭐⭐⭐⭐ (4.5/5)</p>
+            <br>
+            <a href="#" class="btn">Explore Course</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-box">
+          <h3>EduPress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="footer-box">
+          <h3>GET HELP</h3>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Latest Articles</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>PROGRAMS</h3>
+          <ul>
+            <li><a href="#">Art & Design</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">IT & Software</a></li>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Programming</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>CONTACT US</h3>
+          <address>
+            Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA<br>
+            Tel: +1 (123) 2500-567-8988<br>
+            Email: support@gmail.com
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Flickity JS -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>

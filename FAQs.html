@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduPress - FAQs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">EduPress</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="CourseListing.html">Courses</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="Login.html">Login/Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="faq-page">
+      <h1 class="page-title">Frequently Asked Questions</h1>
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Homepage</a>
+        <span class="separator">&gt;</span>
+        <span class="current"> <a href="FAQs.html">FAQs</a></span>
+      </nav>
+
+      <!-- FAQ Section -->
+      <section class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">What Does Royalty Free Mean?</button>
+          <div class="faq-answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I register?</button>
+          <div class="faq-answer">
+            Register by clicking the Login/Register button on the top right.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How can I access my courses?</button>
+          <div class="faq-answer">
+            Once registered, you can access courses from your dashboard.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I get a refund?</button>
+          <div class="faq-answer">
+            Refund policies vary by course; please check our terms and
+            conditions.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-box">
+          <h3>EduPress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="footer-box">
+          <h3>GET HELP</h3>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Latest Articles</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>PROGRAMS</h3>
+          <ul>
+            <li><a href="#">Art & Design</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">IT & Software</a></li>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Programming</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>CONTACT US</h3>
+          <address>
+            Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA<br />
+            Tel: +1 (123) 2500-567-8988<br />
+            Email: support@gmail.com
+          </address>
+          <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Pinterest</a>
+            <a href="#">X</a>
+            <a href="#">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle FAQ answers
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const answer = button.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>

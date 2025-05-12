@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduPress - Course Listings</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* -----------------------------
+       Additional Styles for Course Listing Page
+    -------------------------------*/
+    /* Container Utility */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Page Title */
+    .page-title {
+      text-align: center;
+      margin: 30px 0 20px;
+      font-size: 2rem;
+      color: var(--primary-color, #FFA500);
+    }
+    
+    /* Search Bar */
+    .search-bar {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .search-bar input[type="text"] {
+      width: 60%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Course Container: Sidebar and Listing */
+    .course-container {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    /* Sidebar Filters */
+    .sidebar {
+      flex: 1;
+      max-width: 250px;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .sidebar h3 {
+      margin-bottom: 10px;
+      color: var(--primary-color, #FFA500);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .sidebar input[type="checkbox"],
+    .sidebar input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    /* Course Listings Grid */
+    .course-listing {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    /* Course card anchor wrapper so that the entire card is clickable */
+    .course-link {
+      text-decoration: none;
+    }
+    .course-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      color: inherit;
+    }
+    .course-card:hover {
+      transform: scale(1.02);
+    }
+    .course-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .course-card .course-info {
+      padding: 15px;
+    }
+    .course-card .course-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary-color, #FFA500);
+    }
+    .course-card .course-info p {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      color: #666;
+    }
+    .course-card .course-info .price {
+      font-weight: bold;
+      color: green;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .course-container {
+        flex-direction: column;
+      }
+      .sidebar {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">EduPress</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="CourseListing.html">Courses</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+        <li><a href="Login.html">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+      <h1 class="page-title">Course Listings</h1>
+      
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search courses...">
+      </div>
+      
+      <!-- Course Container -->
+      <div class="course-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+          <div class="filters">
+            <h3>Categories</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="cat-commercial">
+                <label for="cat-commercial">Commercial</label>
+              </li>
+              <li>
+                <input type="checkbox" id="cat-office">
+                <label for="cat-office">Office</label>
+              </li>
+              <li>
+                <input type="checkbox" id="cat-shop">
+                <label for="cat-shop">Shop</label>
+              </li>
+              <li>
+                <input type="checkbox" id="cat-studio">
+                <label for="cat-studio">Studio</label>
+              </li>
+              <li>
+                <input type="checkbox" id="cat-education">
+                <label for="cat-education">Education</label>
+              </li>
+              <li>
+                <input type="checkbox" id="cat-gallery">
+                <label for="cat-gallery">Gallery</label>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="filters">
+            <h3>Price</h3>
+            <ul>
+              <li>
+                <input type="radio" name="price" id="price-all" checked>
+                <label for="price-all">All</label>
+              </li>
+              <li>
+                <input type="radio" name="price" id="price-free">
+                <label for="price-free">Free</label>
+              </li>
+              <li>
+                <input type="radio" name="price" id="price-paid">
+                <label for="price-paid">Paid</label>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="filters">
+            <h3>Review Rating</h3>
+            <ul>
+              <li>
+                <input type="radio" name="rating" id="rating-all" checked>
+                <label for="rating-all">All</label>
+              </li>
+              <li>
+                <input type="radio" name="rating" id="rating-4">
+                <label for="rating-4">4 Stars &amp; Up</label>
+              </li>
+              <li>
+                <input type="radio" name="rating" id="rating-3">
+                <label for="rating-3">3 Stars &amp; Up</label>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="filters">
+            <h3>Level</h3>
+            <ul>
+              <li>
+                <input type="radio" name="level" id="level-all" checked>
+                <label for="level-all">All</label>
+              </li>
+              <li>
+                <input type="radio" name="level" id="level-beginner">
+                <label for="level-beginner">Beginner</label>
+              </li>
+              <li>
+                <input type="radio" name="level" id="level-intermediate">
+                <label for="level-intermediate">Intermediate</label>
+              </li>
+              <li>
+                <input type="radio" name="level" id="level-advanced">
+                <label for="level-advanced">Advanced</label>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        
+        <!-- Course Listings -->
+        <section class="course-listing">
+          <!-- Course Card 1 -->
+          <a href="CourseSingle.html" class="course-link">
+            <div class="course-card">
+              <img src="img/course-thumbnail1.jpg" alt="Course 1">
+              <div class="course-info">
+                <h3>Create An LMS Website With LearnPress</h3>
+                <p>Instructor: John Doe</p>
+                <p>120 Students | 10 Lessons</p>
+                <p class="price">Free</p>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Course Card 2 -->
+          <a href="CourseSingle.html" class="course-link">
+            <div class="course-card">
+              <img src="img/course-thumbnail2.jpg" alt="Course 2">
+              <div class="course-info">
+                <h3>Mastering JavaScript for Beginners</h3>
+                <p>Instructor: Jane Smith</p>
+                <p>80 Students | 8 Lessons</p>
+                <p class="price">$49.99</p>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Course Card 3 -->
+          <a href="CourseSingle.html" class="course-link">
+            <div class="course-card">
+              <img src="img/course-thumbnail3.jpg" alt="Course 3">
+              <div class="course-info">
+                <h3>Advanced Python Programming</h3>
+                <p>Instructor: Mike Johnson</p>
+                <p>200 Students | 15 Lessons</p>
+                <p class="price">$79.99</p>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Course Card 4 -->
+          <a href="CourseSingle.html" class="course-link">
+            <div class="course-card">
+              <img src="img/course-thumbnail4.jpg" alt="Course 4">
+              <div class="course-info">
+                <h3>Digital Marketing Strategies</h3>
+                <p>Instructor: Emily Davis</p>
+                <p>150 Students | 12 Lessons</p>
+                <p class="price">$59.99</p>
+              </div>
+            </div>
+          </a>
+          
+          <!-- More Course Cards can be added similarly... -->
+        </section>
+      </div> <!-- End Course Container -->
+    </div> <!-- End Container -->
+  </main>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>EduPress</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="footer-box">
+        <h3>GET HELP</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Latest Articles</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>PROGRAMS</h3>
+        <ul>
+          <li><a href="#">Art & Design</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">IT & Software</a></li>
+          <li><a href="#">Languages</a></li>
+          <li><a href="#">Programming</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>CONTACT US</h3>
+        <address>
+          Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA<br>
+          Tel: +1 (123) 2500-567-8988<br>
+          Email: support@gmail.com
+        </address>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Pinterest</a>
+          <a href="#">X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
